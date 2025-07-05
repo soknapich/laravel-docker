@@ -7,17 +7,25 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-#
-## ENV
-## DB_CONNECTION=mysql
-## DB_HOST=mysql
-## DB_PORT=3306
-## DB_DATABASE=laravel
-## DB_USERNAME=laravel
-## DB_PASSWORD=secret
+1. **Config:**
+   - In the Laravel directory, create a `.env` file (copy from `.env.example`):
+     ```
+        DB_CONNECTION=mysql
+        DB_HOST=mysql
+        DB_PORT=3306
+        DB_DATABASE=laravel
+        DB_USERNAME=laravel
+        DB_PASSWORD=secret
+     ```
+   - Migrate Database:
+     ```
+        docker exec -it laravel_app php artisan migrate
+     ```
 
-
-## docker exec -it laravel_app php artisan migrate
+   - Seed data to table:
+     ```
+        docker exec -it laravel_app php artisa db:seed
+     ```
 
 ## About Laravel
 
