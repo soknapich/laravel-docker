@@ -8,6 +8,17 @@
 </p>
 
 1. **Configuration:**
+
+- Run composer install command:
+    ```
+    composer install
+    ```
+
+- Run docker compose to buld:
+    ```
+    docker compose up -d --build
+    ```
+
 - In the Laravel directory, create a `.env` file (copy from `.env.example`):
     ```
     DB_CONNECTION=mysql
