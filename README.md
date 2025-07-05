@@ -35,8 +35,9 @@
 
 - Seed data to table:
     ```
-    docker exec -it laravel_app php artisa db:seed
+    docker exec -it laravel_app php artisas db:seed
     ```
+    noted: if you got error ``` Connection refused ``` please restart mysql service in your docker
 
 - Now visit::
     ```
