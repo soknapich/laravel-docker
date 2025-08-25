@@ -10,4 +10,10 @@ RUN apt-get update && apt-get install -y \
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+# Copy Laravel app into container
+# COPY . /var/www/html
+
+# # Install PHP dependencies
+# RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+
 EXPOSE 9000
