@@ -5,9 +5,9 @@
 
             <form @submit.prevent="submit" class="space-y-4">
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1" for="username">Email</label>
+                    <label class="block text-sm font-medium text-gray-700 mb-1" for="email">Email</label>
 
-                    <input v-model="data.username" id="username" type="text"
+                    <input v-model="data.email" id="email" type="email"
                         class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Email" required>
                 </div>
@@ -36,7 +36,7 @@ export default {
     name: "Login",
     setup() {
         const data = reactive({
-            username: '',
+            email: '',
             password: ''
         });
         const auth = useAuthStore();
@@ -44,7 +44,7 @@ export default {
         const submit = async () => {
             //console.log(data.username, data.password);
             
-            await auth.login(data.username, data.password)
+            await auth.login(data.email, data.password)
             if (auth.token) {
                 //await router.push('/');
                 window.location = "/";
