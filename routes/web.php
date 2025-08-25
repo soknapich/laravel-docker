@@ -19,12 +19,6 @@ Route::get('/products', function () {
 
 
 Route::get('/users', function () {
-    
-    $user = User::find(1);
-    $token = $user->createToken('MyAppToken')->accessToken;
-
-    return response()->json(['token' => $token]);
-
-    //return User::all();
+    return User::all();
 });
 
