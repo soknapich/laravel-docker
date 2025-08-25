@@ -21,27 +21,39 @@
 
 - In the Laravel directory, create a `.env` file (copy from `.env.example`):
     ```
-    DB_CONNECTION=mysql
-    DB_HOST=mysql
+    DB_CONNECTION=mariadb
+    DB_HOST=mariadb
     DB_PORT=3306
-    DB_DATABASE=laravel
-    DB_USERNAME=laravel
-    DB_PASSWORD=secret
+    DB_DATABASE=mydb
+    DB_USERNAME=myuser
+    DB_PASSWORD=mypass
     ```
+
+- Generate Laravel Key:
+    ```
+    docker exec -it app php artisan key:generate
+    ```
+
 - Migrate database:
     ```
-    docker exec -it laravel_app php artisan migrate
+    docker exec -it app php artisan migrate
+
     ```
-    noted: if you got error ``` Connection refused ``` please restart mysql service in your docker
+- Install Passport:
+    ```
+    docker exec -it app php artisan passport:install
+
+    ```
+    noted: if you got error ``` Connection refused ``` please restart mariadb service in your docker
 
 - Seed data to table:
     ```
-    docker exec -it laravel_app php artisas db:seed
+    docker exec -it app php artisan db:seed
     ```
  
 - Now visit::
     ```
-    http://localhost:8000
+    http://localhost:80
      ```
 
 ## About Laravel
